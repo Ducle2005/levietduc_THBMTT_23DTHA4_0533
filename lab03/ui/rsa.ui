@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RSAWidget</class>
+ <widget class="QWidget" name="RSAWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RSA Encryption / Decryption</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainVerticalLayout">
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="title_label">
+     <property name="text">
+      <string>RSA 2048-bit Encryption &amp; Decryption</string>
+     </property>
+     <property name="styleSheet">
+      <string>font-size: 18px; font-weight: bold; color: #5865f2; margin-bottom: 10px;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="keysGridLayout">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="pubLabel">
+       <property name="text">
+        <string>Public Key (PEM):</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QTextEdit" name="pub_key_txt">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>Khóa công khai (Public Key) sẽ hiển thị ở đây...</string>
+       </property>
+       <property name="maximumHeight">
+        <number>150</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="privLabel">
+       <property name="text">
+        <string>Private Key (PEM):</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QTextEdit" name="priv_key_txt">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>Khóa bí mật (Private Key) sẽ hiển thị ở đây...</string>
+       </property>
+       <property name="maximumHeight">
+        <number>150</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_gen_key">
+     <property name="text">
+      <string>Generate RSA Key</string>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string>padding: 10px; font-size: 14px;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="contentHorizontalLayout">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="leftVerticalLayout">
+       <item>
+        <widget class="QLabel" name="plainLabel">
+         <property name="text">
+          <string>Plaintext (Bản rõ):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="plaintext_txt">
+         <property name="placeholderText">
+          <string>Nhập nội dung cần mã hóa...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_encrypt">
+         <property name="text">
+          <string>Encrypt (Mã hóa)</string>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="rightVerticalLayout">
+       <item>
+        <widget class="QLabel" name="cipherLabel">
+         <property name="text">
+          <string>Ciphertext (Base64) (Bản mã):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="ciphertext_txt">
+         <property name="placeholderText">
+          <string>Bản mã dạng Base64...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_decrypt">
+         <property name="text">
+          <string>Decrypt (Giải mã)</string>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="decryptedLabel">
+         <property name="text">
+          <string>Decrypted Text (Bản giải mã):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="decrypted_txt">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>Nội dung sau khi giải mã...</string>
+         </property>
+         <property name="maximumHeight">
+          <number>100</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_back">
+     <property name="text">
+      <string>Quay lại Menu</string>
+     </property>
+     <property name="styleSheet">
+      <string>background-color: #4f545c; font-weight: normal; margin-top: 10px;</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
