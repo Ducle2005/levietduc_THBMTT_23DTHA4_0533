@@ -66,12 +66,17 @@ def encode_message_in_image(image_path, message, output_path):
     new_img.save(output_path)
     print(f"[SUCCESS] Đã giấu tin thành công và lưu ảnh mới tại: {output_path}")
     
-    # Tự động mở ảnh vừa tạo lên màn hình
+    # Tự động mở ảnh vừa tạo ngay trong VS Code
     try:
-        new_img.show()
-        print("[*] Đã tự động mở ảnh đã giấu tin lên màn hình của bạn.")
+        import subprocess
+        subprocess.run(f'code -r "{output_path}"', shell=True)
+        print("[*] Đã tự động mở ảnh đã giấu tin làm 1 tab trong VS Code.")
     except Exception as e:
-        print(f"[-] Không thể tự động mở ảnh: {e}")
+        try:
+            new_img.show()
+            print("[*] Đã mở ảnh bằng trình xem ảnh mặc định của máy.")
+        except Exception:
+            print(f"[-] Không thể tự động mở ảnh: {e}")
         
     return True
 
