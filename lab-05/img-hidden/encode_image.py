@@ -65,6 +65,14 @@ def encode_message_in_image(image_path, message, output_path):
     new_img.putdata(new_pixels)
     new_img.save(output_path)
     print(f"[SUCCESS] Đã giấu tin thành công và lưu ảnh mới tại: {output_path}")
+    
+    # Tự động mở ảnh vừa tạo lên màn hình
+    try:
+        new_img.show()
+        print("[*] Đã tự động mở ảnh đã giấu tin lên màn hình của bạn.")
+    except Exception as e:
+        print(f"[-] Không thể tự động mở ảnh: {e}")
+        
     return True
 
 def main():
