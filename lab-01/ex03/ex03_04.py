@@ -1,0 +1,5 @@
+input_tuple = input("Nhập các phần tử của tuple, cách nhau bằng dấu phẩy: ")
+my_tuple = tuple(input_tuple.split(','))
+print("Tuple:", my_tuple)
+print("Phần tử đầu tiên:", my_tuple[0])
+print("Phần tử cuối cùng:", my_tuple[-1])
